@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# Re:Shop Manager
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to Re:Shop Manager, an application designed for managing clothing items as part of the Re:Shop project. Re:Shop aims to facilitate the buying and selling of second-hand clothing in Jerusalem.
+![image](https://github.com/or-meisson/reshop-manager/assets/148000181/f682938a-0ecb-476d-8788-9cb7577df10b)
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+### 1. Overview
 
-### `npm start`
+Re:Shop Manager allows users to efficiently manage their inventory of clothing items. Whether you're arranging items for sale or updating their status, this application provides essential tools to streamline your operations.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 2. Functionality
 
-### `npm test`
+#### Viewing All Items
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Description:** View all clothing items currently managed by the application.
+- **Access:** Directly from the home screen, click on "כל הפריטים" to access the list.
+- ![image](https://github.com/or-meisson/reshop-manager/assets/148000181/24e617dd-37c0-459b-b02f-9fae33a1c3de)
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Editing Items
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Description:** Modify details of existing items such as name, size, price, seller information, and sold status.
+- **Access:** Click on the edit icon (pencil icon) next to each item in the list.
+- ![image](https://github.com/or-meisson/reshop-manager/assets/148000181/105ca6d4-3ba9-4b01-8b21-0f027a867f8e)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+#### Adding New Items
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Description:** Add new clothing items to the inventory with detailed information.
+- **Access:** Navigate to the "פריט חדש" option from the home screen.
+- ![image](https://github.com/or-meisson/reshop-manager/assets/148000181/7c480149-cb8d-4aee-831c-ed6d4d1d9588)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### Printing QR Codes
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **Description:** Generate and print QR codes for each item to facilitate quick access and management.
+- **Access:** Use the "להדפסה" option to generate QR codes for selected items.
+- ![image](https://github.com/or-meisson/reshop-manager/assets/148000181/bd279a2a-38a9-4ee7-81a1-ee0926e87d64)
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 3. Usage
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Getting Started
 
-### Code Splitting
+1. **Installation:** Clone the repository and install dependencies using `npm install`.
+2. **Setup:** Configure your Firebase credentials in `firebaseConfig.js` to enable data storage and retrieval.
+3. **Running the App:** Start the development server with `npm start`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### Managing Items
 
-### Analyzing the Bundle Size
+- **Adding New Items:** Fill out the required fields in the "פריט חדש" section and save the details.
+- **Editing Items:** Click on the edit icon next to an item, make necessary changes, and save.
+- **Deleting Items:** Confirm deletion when prompted after clicking on the delete icon next to an item.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 4. Support
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For any issues or questions regarding the application, please contact [your contact information or support email].
