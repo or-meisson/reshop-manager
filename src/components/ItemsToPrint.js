@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../firebaseConfig';
-import { collection, getDocs, deleteDoc,doc,orderBy    } from 'firebase/firestore';
-import Swal from 'sweetalert2';
+import { collection, getDocs,orderBy    } from 'firebase/firestore';
 // import { MdDelete } from "react-icons/md";
 import dayjs from 'dayjs';
 import Button from './Button'

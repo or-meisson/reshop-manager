@@ -2,7 +2,7 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import QRCode from 'qrcode.react';
 import Button from './Button'
-import { Link, useNavigate  } from 'react-router-dom';
+import { useNavigate  } from 'react-router-dom';
 
 
 
