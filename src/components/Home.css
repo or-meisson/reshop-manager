@@ -1,0 +1,32 @@
+/* Example styles for the Home component */
+.container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  h1 {
+    margin-top: 350px;
+    font-family: Heebo;
+    font-size: 3rem;
+    margin-bottom: 40px;
+  }
+  .logo {
+    width: 200px; /* Adjust the size as needed */
+    height: 200px; /* Ensure the height is the same as the width for a perfect circle */
+    margin-bottom: 40px; /* Add some space below the logo */
+    border-radius: 50%; /* Make the image round */
+    object-fit: cover; /* Ensure the image covers the entire area without distortion */
+  }
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+  .btn {
+    background-color:#ccc;
+    border: none;
+    color: #000;
+    margin: 10px;
+    
+  }
+  
