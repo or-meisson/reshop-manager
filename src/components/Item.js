@@ -128,7 +128,7 @@ const Item = () => {
           <input
             type="checkbox"
             name="sold"
-                            className="checkbox -mb-1 mx-2"
+            className="checkbox -mb-1 mx-2"
             checked={item.sold}
             onChange={() => setItem({ ...item, sold: !item.sold })}
           />
@@ -142,6 +142,15 @@ const Item = () => {
         >
           שמירת שינויים
         </Button>
+
+        <Button
+          className="bg-secondary w-full max-w-md mx-auto text-center text-white"
+          onClick={() => navigate("/items")}
+        >
+          חזרה לכל הפריטים
+        </Button>
+
+
         <Button
           className="bg-secondary w-full max-w-md mx-auto text-center text-white"
           onClick={() => navigate("/")}
