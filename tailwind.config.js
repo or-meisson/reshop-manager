@@ -1,16 +1,26 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require('tailwindcss/plugin');
+const rtl = require('tailwindcss-rtl');
+
 module.exports = {
-  // content: [
-  //   "./src/**/*.{js,jsx,ts,tsx}",
-  // ],
-  content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
+    content: ["./src/**/*.{html,js}"],
   theme: {
     extend: {
       fontFamily: {
         heebo: ['Heebo', 'sans-serif'],
       },
+      colors: {
+        'mint-green': '#B6D3BF'
+      }
     },
   },
-  plugins: [],
+  plugins: [
+    rtl,
+    require('daisyui'),
+  ],
+  daisyui: {
+    themes: false,
+    darkTheme:"light"
+ }
 }
 

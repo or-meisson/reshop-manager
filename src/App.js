@@ -6,11 +6,26 @@ import ItemList from './components/ItemList';
 import Item from './components/Item';
 import ItemsToPrint from './components/ItemsToPrint';
 import PrintPage from './components/PrintPage';
+import Auth from './components/Auth';
+import { auth } from './firebaseConfig';
+import { useAuthState } from 'react-firebase-hooks/auth';
+
 
 function App() {
+  const [user, loadingAuth] = useAuthState(auth);
+  
+
+
+  if (loadingAuth) {
+    return <div>Loading...</div>;
+  }
+
+  if (!user) {
+    return <Auth />;
+  }
   return (
     <Router>
-    <div>
+    <div className='relative w-full h-full'>
       <Routes> 
         <Route path="/" exact element={<Home/>} />
         <Route path="/add-item" element={<AddItem />} /> 

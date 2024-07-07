@@ -4,7 +4,7 @@ import { collection, getDocs,orderBy    } from 'firebase/firestore';
 // import { MdDelete } from "react-icons/md";
 import dayjs from 'dayjs';
 import Button from './Button'
-
+import "./AddItem.css"
 import { useNavigate } from 'react-router-dom';
 
 
@@ -61,7 +61,7 @@ const ItemsToPrint = () => {
       };
   
     return (
-      <div className="container font-heebo">
+      <div className="container font-heebo mx-auto">
         <h2 className="text-right mb-3 mt-3">פריטים להדפסה</h2>
         <ul className="list-group ">
           {items.map((item, index) =>

@@ -5,6 +5,7 @@ import { db } from '../firebaseConfig';
 import { collection, addDoc,serverTimestamp  } from 'firebase/firestore';
 import Swal from 'sweetalert2';
 import { Link, useNavigate  } from 'react-router-dom';
+import "./AddItem.css"
 
 const AddItem = () => {
   const [item, setItem] = useState({
@@ -66,10 +67,10 @@ const AddItem = () => {
     isDone ? (
       <div className="flex flex-col justify-end items-end m-4 gap-3">
         <QRCode
-          value={`http://localhost:3000/item/${item.id}`}
+          value={`https://reshop-manager.web.app/item/${item.id}`}
           className=" mx-auto text-center cursor-pointer "
           onClick={() => {
-            navigator.clipboard.writeText(`http://localhost:3000/item/${item.id}`);
+            navigator.clipboard.writeText(`https://reshop-manager.web.app/item/${item.id}`);
           }}
         />
         <Button
@@ -94,7 +95,7 @@ const AddItem = () => {
         </Link>
       </div>
     ) : (
-      <div className="container text-right flex flex-col justify-end items-end">
+      <div className=" text-right flex flex-col justify-center items-center mx-auto ">
         <h2 className="text-2xl font-heebo mt-2 mb-6">הוספת פריט חדש</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="form-group">
@@ -117,32 +118,32 @@ const AddItem = () => {
               className="dropdown-content menu bg-base-100 border border-gray-300 rounded-box z-[1] w-52 p-2 shadow"
             >
               <li>
-                <a onClick={() => handleSizeSelect('XXS')}>XXS</a>
+                <div href={null}onClick={() => handleSizeSelect('XXS')}>XXS</div>
               </li>
               <li>
-                <a onClick={() => handleSizeSelect('XS')}>XS</a>
+                <div href={null}onClick={() => handleSizeSelect('XS')}>XS</div>
               </li>
               <li>
-                <a onClick={() => handleSizeSelect('S')}>S</a>
+                <div href={null}onClick={() => handleSizeSelect('S')}>S</div>
               </li>
               <li>
-                <a onClick={() => handleSizeSelect('M')}>M</a>
+                <div href={null}onClick={() => handleSizeSelect('M')}>M</div>
               </li>
               <li>
-                <a onClick={() => handleSizeSelect('L')}>L</a>
+                <div href={null}onClick={() => handleSizeSelect('L')}>L</div>
               </li>
               <li>
-                <a onClick={() => handleSizeSelect('XL')}>XL</a>
+                <div href={null}onClick={() => handleSizeSelect('XL')}>XL</div>
               </li>
               <li>
-                <a onClick={() => handleSizeSelect('XXL')}>XXL</a>
+                <div href={null}onClick={() => handleSizeSelect('XXL')}>XXL</div>
               </li>
               <li>
-                <a onClick={() => handleSizeSelect('XXXL')}>XXXL</a>
+                <div href={null}onClick={() => handleSizeSelect('XXXL')}>XXXL</div>
               </li>
               {[...Array(28)].map((_, index) => (
                 <li key={index}>
-                  <a onClick={() => handleSizeSelect(25 + index)}>{25 + index}</a>
+                  <div href={null}onClick={() => handleSizeSelect(25 + index)}>{25 + index}</div>
                 </li>
               ))}
             </ul>
@@ -194,7 +195,7 @@ const AddItem = () => {
             />
             <label className="form-check-label">נמכר</label>
           </div>
-          <Button type="submit" className="w-full max-w-md mx-auto text-center bg-mint-green text-black ">
+          <Button type="submit" className="w-full max-w-md mx-auto text-centers bg-mint-green text-black ">
             הוספת פריט
           </Button>
           <Button

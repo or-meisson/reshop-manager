@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "bootstrap": "^5.3.3",
     "dayjs": "^1.11.11",
     "firebase": "^10.12.3",
     "postcss-cli": "^11.0.0",
@@ -22,8 +23,7 @@
   "scripts": {
     "start": "SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
     "build": "SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts build",
-    "start-wf": "react-scripts start",
-    "build-wf": "react-scripts build",
+    "deploy": "npm run build && firebase deploy",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -31,14 +31,7 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ],
-    "env": {
-      "browser": true,
-      "es6": true
-    },
-    "rules": {
-      "jsx-a11y/anchor-is-valid": "off" 
-    }
+    ]
   },
   "browserslist": {
     "production": [
@@ -53,7 +46,6 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "autoprefixer": "^10.4.19",
     "daisyui": "^4.12.10",
     "postcss": "^8.4.39",

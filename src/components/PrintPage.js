@@ -21,10 +21,10 @@ const PrintPage = () => {
             <p className="text-center mb-2">{item.size} :מידה</p>
             <p className="text-center mb-2">₪{item.price} :מחיר</p>
             <QRCode
-              value={`http://localhost:3000/item/${item.id}`}
+              value={`https://reshop-manager.web.app/item/${item.id}`}
               className="mx-auto cursor-pointer"
               onClick={() => {
-                navigator.clipboard.writeText(`http://localhost:3000/item/${item.id}`);
+                navigator.clipboard.writeText(`https://reshop-manager.web.app/item/${item.id}`);
               }}
             />
           </div>
