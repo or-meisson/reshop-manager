@@ -41,7 +41,7 @@ Re:Shop Manager allows users to efficiently manage their inventory of clothing i
 
 
 ![image](https://github.com/user-attachments/assets/3ab1785c-2847-4512-ad24-3e333671abe4)
-- After affing a new item, the item's new QR code will be displayed and the user would be able to add an additional item.
+- After adding a new item, the item's new QR code will be displayed and the user would be able to add another item.
 
 
 ![image](https://github.com/user-attachments/assets/0d0425b2-ab5d-47c8-aab3-bd61921e9912)
@@ -57,8 +57,10 @@ Re:Shop Manager allows users to efficiently manage their inventory of clothing i
 
 
   ![image](https://github.com/user-attachments/assets/e02c8929-93a7-4d28-969f-72c66354648c)
+- After pressing "להדפסת הפריטים המסומנים", the selected items' QR codes will be displayed for easy printing.
 
-- ![image](https://github.com/or-meisson/reshop-manager/assets/148000181/bd279a2a-38a9-4ee7-81a1-ee0926e87d64)
+ ![image](https://github.com/or-meisson/reshop-manager/assets/148000181/bd279a2a-38a9-4ee7-81a1-ee0926e87d64)
 
+- scanning the QR code would redirect the user to the editing page, where the manager could update the status of the item and other details.
 
 
