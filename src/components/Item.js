@@ -70,72 +70,80 @@ const Item = () => {
   }
 
   return (
-    <div className="container text-right rtl p-4 font-heebo">
-      <h2 className="text-2xl mb-6">עריכת פריט</h2>
-      <div className="bg-white shadow-md rounded p-6 mb-4">
-        <div className="mb-4">
-          <label className="block font-semibold">:תיאור</label>
+    <div className="px-2 font-heebo w-full text-right">
+      <div className="flex justify-between max-w-[1000px] mx-auto items-center mb-3 mt-3">
+        <Button
+          className="bg-secondary text-white mt-3 mb-3"
+          onClick={() => navigate("/")}
+        >
+          חזרה למסך הבית
+        </Button>
+        <h2 className="text-2xl font-bold mb-0 text-right">עריכת פריט</h2>
+      </div>
+      <div className=" bg-white shadow-md rounded p-6 mb-4 max-w-[1000px] mx-auto">
+        <div className="mb-4 flex items-center">
           <input
             type="text"
             name="name"
             value={item.name}
             onChange={handleInputChange}
-            className="input-field"
+            className=" text-right input-field w-full max-w-md px-2 py-1 border border-gray-300 rounded"
           />
+          <label className="block font-semibold text-right flex-grow">:תיאור</label>
         </div>
-        <div className="mb-4">
-          <label className="block font-semibold">:מידה</label>
+        <div className="mb-4 flex items-center">
           <input
             type="text"
             name="size"
             value={item.size}
             onChange={handleInputChange}
-            className="input-field"
+            className=" text-right input-field w-full max-w-md px-2 py-1 border border-gray-300 rounded"
           />
+          <label className="block font-semibold text-right flex-grow">:מידה</label>
         </div>
-        <div className="mb-4">
-          <label className="block font-semibold">:מחיר</label>
+        <div className="mb-4 flex items-center">
           <input
             type="number"
             name="price"
             value={item.price}
             onChange={handleInputChange}
-            className="input-field"
+            className=" text-right input-field w-full max-w-md px-2 py-1 border border-gray-300 rounded"
           />
+          <label className="block font-semibold text-right flex-grow">:מחיר</label>
         </div>
-        <div className="mb-4">
-          <label className="block font-semibold">:שם מוכר/ת</label>
+        <div className="mb-4 flex items-center">
           <input
             type="text"
             name="owner"
             value={item.owner}
             onChange={handleInputChange}
-            className="input-field"
+            className=" text-right input-field w-full max-w-md px-2 py-1 border border-gray-300 rounded"
           />
+          <label className="block font-semibold text-right flex-grow">:שם מוכר/ת</label>
         </div>
-        <div className="mb-4">
-          <label className="block font-semibold">:טלפון מוכר/ת</label>
+        <div className="mb-4 flex items-center">
           <input
             type="text"
             name="phone"
             value={item.phone}
             onChange={handleInputChange}
-            className="input-field"
+            className=" text-right input-field w-full max-w-md px-2 py-1 border border-gray-300 rounded"
           />
+          <label className="block font-semibold text-right flex-grow">:טלפון מוכר/ת</label>
         </div>
-        <div className="mb-4">
-          <label className="block font-semibold">:נמכר</label>
+        <div className="mb-4 flex items-center">
           <input
             type="checkbox"
             name="sold"
-            className="checkbox -mb-1 mx-2"
+            className="checkbox  -mb-1 mx-2"
             checked={item.sold}
             onChange={() => setItem({ ...item, sold: !item.sold })}
           />
-          <span>{item.sold ? 'כן' : 'לא'}</span>
+          <span className="text-right mr-2">{item.sold ? 'כן' : 'לא'}</span>
+          <label className="  block font-semibold text-right flex-grow">:נמכר</label>
         </div>
       </div>
-      <div className="flex flex-col items-center space-y-4">
+      <div className="text-right flex flex-col items-center space-y-4">
         <Button
           className="bg-mint-green w-full max-w-md mx-auto text-center"
           onClick={handleSave}
@@ -148,14 +156,6 @@ const Item = () => {
           onClick={() => navigate("/items")}
         >
           חזרה לכל הפריטים
-        </Button>
-
-
-        <Button
-          className="bg-secondary w-full max-w-md mx-auto text-center text-white"
-          onClick={() => navigate("/")}
-        >
-          חזרה למסך הבית
         </Button>
       </div>
     </div>

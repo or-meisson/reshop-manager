@@ -65,7 +65,7 @@ const ItemList = () => {
 
     return (
       <div className="px-2 font-heebo w-full">
-        <div className="flex justify-between items-center mb-3 mt-3">
+        <div className="flex justify-between max-w-[1000px]  mx-auto items-center mb-3 mt-3">
         <Button
         className="bg-secondary text-white mt-3 mb-3"
         onClick={()=>navigator("/")}

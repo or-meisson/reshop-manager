@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import Button from './Button';
 import QRCode from 'qrcode.react';
 import { db } from '../firebaseConfig';
-import { collection, addDoc,serverTimestamp  } from 'firebase/firestore';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import Swal from 'sweetalert2';
-import { Link, useNavigate  } from 'react-router-dom';
-import "./AddItem.css"
+import { Link, useNavigate } from 'react-router-dom';
 
 const AddItem = () => {
   const [item, setItem] = useState({
@@ -17,8 +16,7 @@ const AddItem = () => {
     sold: false,
   });
   const [isDone, setIsDone] = useState(false);
-  const navigator = useNavigate()
-
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value, type, checked, files } = e.target;
@@ -38,7 +36,7 @@ const AddItem = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const docRef = await addDoc(collection(db, 'items'), {...item,timestamp: serverTimestamp()});
+      const docRef = await addDoc(collection(db, 'items'), { ...item, timestamp: serverTimestamp() });
       setItem((prevItem) => ({ ...prevItem, id: docRef.id }));
       Swal.fire({
         icon: 'success',
@@ -64,42 +62,19 @@ const AddItem = () => {
   };
 
   return (
-    isDone ? (
-      <div className="flex flex-col justify-end items-end m-4 gap-3">
-        <QRCode
-          value={`https://reshop-manager.web.app/item/${item.id}`}
-          className=" mx-auto text-center cursor-pointer "
-          onClick={() => {
-            navigator.clipboard.writeText(`https://reshop-manager.web.app/item/${item.id}`);
-          }}
-        />
+    <div className="px-2 font-heebo w-full text-right">
+      <div className="flex justify-between max-w-[1000px] mx-auto items-center mb-3 mt-3">
         <Button
-          className="bg-mint-green w-full max-w-md mx-auto text-center"
-          onClick={() => {
-            setItem({
-              name: '',
-              size: '',
-              price: '',
-              owner: '',
-              phone: '',
-              sold: false,
-            });
-            setIsDone(false);
-          }}
+          className="bg-secondary text-white mt-3 mb-3"
+          onClick={() => navigate("/")}
         >
-          הוספת פריט נוסף
-        </Button>
-        <Link to="/" className="btn btn-active btn-secondary w-full max-w-md text-center mx-auto">
-          {' '}
           חזרה למסך הבית
-        </Link>
+        </Button>
+        <h2 className="text-2xl font-bold mb-0 text-right">הוספת פריט חדש</h2>
       </div>
-    ) : (
-      <div className=" text-right flex flex-col justify-center items-center mx-auto ">
-        <h2 className="text-2xl font-heebo mt-2 mb-6">הוספת פריט חדש</h2>
+      <div className="bg-white shadow-md rounded p-6 mb-4 max-w-[1000px] mx-auto">
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="form-group">
-            <label className="block mb-1 " >תיאור</label>
+          <div className="form-group flex items-center">
             <input
               type="text"
               className="form-control w-full max-w-md px-2 py-1 border border-gray-300 rounded"
@@ -108,48 +83,48 @@ const AddItem = () => {
               onChange={handleChange}
               required
             />
+            <label className="block font-semibold text-right flex-grow">:תיאור</label>
           </div>
           <div className="dropdown dropdown-end">
             <div tabIndex={0} role="button" className="btn m-1 border border-gray-300 rounded">
-             {item.size ? item.size : ""} מידה 
+              {item.size ? item.size : "בחר מידה"}
             </div>
             <ul
               tabIndex={0}
               className="dropdown-content menu bg-base-100 border border-gray-300 rounded-box z-[1] w-52 p-2 shadow"
             >
               <li>
-                <div href={null}onClick={() => handleSizeSelect('XXS')}>XXS</div>
+                <div href={null} onClick={() => handleSizeSelect('XXS')}>XXS</div>
               </li>
               <li>
-                <div href={null}onClick={() => handleSizeSelect('XS')}>XS</div>
+                <div href={null} onClick={() => handleSizeSelect('XS')}>XS</div>
               </li>
               <li>
-                <div href={null}onClick={() => handleSizeSelect('S')}>S</div>
+                <div href={null} onClick={() => handleSizeSelect('S')}>S</div>
               </li>
               <li>
-                <div href={null}onClick={() => handleSizeSelect('M')}>M</div>
+                <div href={null} onClick={() => handleSizeSelect('M')}>M</div>
               </li>
               <li>
-                <div href={null}onClick={() => handleSizeSelect('L')}>L</div>
+                <div href={null} onClick={() => handleSizeSelect('L')}>L</div>
               </li>
               <li>
-                <div href={null}onClick={() => handleSizeSelect('XL')}>XL</div>
+                <div href={null} onClick={() => handleSizeSelect('XL')}>XL</div>
               </li>
               <li>
-                <div href={null}onClick={() => handleSizeSelect('XXL')}>XXL</div>
+                <div href={null} onClick={() => handleSizeSelect('XXL')}>XXL</div>
               </li>
               <li>
-                <div href={null}onClick={() => handleSizeSelect('XXXL')}>XXXL</div>
+                <div href={null} onClick={() => handleSizeSelect('XXXL')}>XXXL</div>
               </li>
               {[...Array(28)].map((_, index) => (
                 <li key={index}>
-                  <div href={null}onClick={() => handleSizeSelect(25 + index)}>{25 + index}</div>
+                  <div href={null} onClick={() => handleSizeSelect(25 + index)}>{25 + index}</div>
                 </li>
               ))}
             </ul>
           </div>
-          <div className="form-group">
-            <label className="block mb-1">מחיר</label>
+          <div className="form-group flex items-center">
             <input
               type="number"
               className="form-control w-full max-w-md px-2 py-1 border border-gray-300 rounded"
@@ -158,9 +133,9 @@ const AddItem = () => {
               onChange={handleChange}
               required
             />
+            <label className="block font-semibold text-right flex-grow">:מחיר</label>
           </div>
-          <div className="form-group">
-            <label className="block mb-1">שם מוכר/ת</label>
+          <div className="form-group flex items-center">
             <input
               type="text"
               className="form-control w-full max-w-md px-2 py-1 border border-gray-300 rounded"
@@ -169,9 +144,9 @@ const AddItem = () => {
               onChange={handleChange}
               required
             />
+            <label className="  block font-semibold text-right flex-grow">:שם מוכר/ת</label>
           </div>
-          <div className="form-group">
-            <label className="block mb-1">טלפון מוכר/ת</label>
+          <div className="form-group flex items-center">
             <input
               type="text"
               className="form-control w-full max-w-md px-2 py-1 border border-gray-300 rounded"
@@ -180,33 +155,27 @@ const AddItem = () => {
               onChange={handleChange}
               required
             />
+          <label className="block font-semibold text-right flex-grow">:טלפון מוכר/ת</label>
           </div>
-          {/* <div className="form-group">
-          <label className="block mb-1">תמונה</label>
-          <input type="file" className="form-control-file w-full max-w-md px-2 py-1 border border-gray-300 rounded" name="picture" onChange={handleChange} accept="image/*" />
-        </div> */}
-          <div className="form-group form-check flex items-center">
-            <input
-              type="checkbox"
-              className="form-check-input h-4 w-4 border border-gray-300 rounded mr-2"
-              name="sold"
-              checked={item.sold}
-              onChange={handleChange}
-            />
-            <label className="form-check-label">נמכר</label>
-          </div>
-          <Button type="submit" className="w-full max-w-md mx-auto text-centers bg-mint-green text-black ">
-            הוספת פריט
-          </Button>
-          <Button
-        className="bg-secondary w-full max-w-md mx-auto text-center text-white"
-        onClick={()=>navigator("/")}
-      >
-        חזרה למסך הבית
-        </Button>
+          <div className="mb-4 flex items-center">
+          <input
+            type="checkbox"
+            name="sold"
+            className="checkbox  -mb-1 mx-2"
+            checked={item.sold}
+            onChange={() => setItem({ ...item, sold: !item.sold })}
+          />
+          <span className="text-right mr-2">{item.sold ? 'כן' : 'לא'}</span>
+          <label className="  block font-semibold text-right flex-grow">:נמכר</label>
+        </div>
         </form>
       </div>
-    )
+      <div className="flex justify-center mt-4">
+        <Button type="submit" className="bg-mint-green w-[30%] text-center" onClick={handleSubmit}>
+          הוספת פריט
+        </Button>
+      </div>
+    </div>
   );
 };
 
