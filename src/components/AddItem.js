@@ -62,6 +62,37 @@ const AddItem = () => {
   };
 
   return (
+    isDone ? (
+      <div className="flex flex-col justify-end items-end m-4 gap-3">
+        <QRCode
+          value={`https://reshop-manager.web.app/item/${item.id}`}
+          className=" mx-auto text-center cursor-pointer "
+          onClick={() => {
+            navigator.clipboard.writeText(`https://reshop-manager.web.app/item/${item.id}`);
+          }}
+        />
+        <Button
+          className="bg-mint-green w-full max-w-md mx-auto text-center"
+          onClick={() => {
+            setItem({
+              name: '',
+              size: '',
+              price: '',
+              owner: '',
+              phone: '',
+              sold: false,
+            });
+            setIsDone(false);
+          }}
+        >
+          הוספת פריט נוסף
+        </Button>
+        <Link to="/" className="btn btn-active btn-secondary w-full max-w-md text-center mx-auto">
+          {' '}
+          חזרה למסך הבית
+        </Link>
+      </div>
+    ):
     <div className="px-2 font-heebo w-full text-right">
       <div className="flex justify-between max-w-[1000px] mx-auto items-center mb-3 mt-3">
         <Button
